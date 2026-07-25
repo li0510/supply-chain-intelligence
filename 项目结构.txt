@@ -1,0 +1,75 @@
+supply-chain-intelligence/
+├── pyproject.toml
+├── templates/                                    # 原始模板（只读）
+│   └── 库存明细表_模板.xlsx
+├── projects/                                     # 处理实例
+│   └── {项目名 or 源文件名}/
+│       ├── 库存明细表_模板.xlsx                  # 副本（名称不变）
+│       ├── raw_data_profile.json                 # 数据探查报告
+│       ├── extracted_data.parquet                # 提取后的结构化数据
+│       ├── inventory_overview.json               # 库存全景报告
+│       ├── efficiency_cost_report.json           # 效率成本报告
+│       ├── category_strategy.json                # 品类策略
+│       ├── abc_xyz_result.json                   # 分类结果
+│       ├── supplier_report.json                  # 供应商评估
+│       ├── supply_demand_gap.json                # 供需缺口
+│       ├── alert_list.json                       # 预警清单
+│       ├── purchase_plan.json                    # 采购计划
+│       ├── final_report.json                     # 最终报告
+│       ├── error_report.json                     # 统一错误报告
+│       └── action_history.json                   # 行动记录（下次步骤0输入）
+│
+└── skills/
+    ├── supply-chain-orchestrator/
+    │   ├── SKILL.md                          # 编排器入口
+    │   └── scripts/
+            ├── orchestrator.py               # 供应链分析编排
+    │       └── precondition_checker.py       # 前置条件检查器（通用）
+    │
+    ├── data-inspector/
+    │   ├── SKILL.md
+    │   └── scripts/
+    │       ├── utils.py              # 数据工具公共模块
+    │       ├── data_profiler.py              # 数据结构分析
+    │       ├── column_mapper.py              # 三级列映射
+    │       ├── data_extractor.py             # 字段提取
+    │       ├── data_validator.py             # 数据质量检查 + 平衡校验
+    │       └── concat_dataframes_stream.py   # 多文件流式拼接
+    │
+    ├── inventory-overview/
+    │   ├── SKILL.md
+    │   └── scripts/
+    │       ├── data_aggregator.py            # 分组聚合
+    │       ├── inventory_turnover.py         # 周转率/周转天数/呆滞识别
+    │       └── cost_analyzer.py              # 库存资金占用/出入库金额
+    │
+    ├── category-classifier/
+    │   ├── SKILL.md
+    │   └── scripts/
+    │       ├── abc_classifier.py             # ABC 分类
+    │       └── xyz_classifier.py             # XYZ 分类
+    │
+    ├── supplier-analyzer/
+    │   ├── SKILL.md
+    │   └── scripts/
+    │       └── supplier_evaluator.py         # 供应商交期/质量/风险评估
+    │
+    ├── supply-demand-matcher/
+    │   ├── SKILL.md
+    │   └── scripts/
+    │       └── supply_demand_matcher.py      # 供需匹配 + 缺口识别
+    │
+    ├── inventory-planner/
+    │   ├── SKILL.md
+    │   └── scripts/
+    │       ├── hyperparameter_tuner.py       # 高性能并行调参
+    │       ├── demand_forecast.py            # 需求预测
+    │       ├── inventory_planning.py         # 安全库存/ROP/最高库存
+    │       ├── inventory_alert.py            # 缺货/积压/采购预警
+    │       └── three_lines_defense.py        # 三道防线编排
+    │
+    └── purchase-advisor/
+        ├── SKILL.md
+        └── scripts/
+            ├── purchase_planner.py           # 采购优先级 + 建议量
+            └── report_generator.py           # 综合报告 + 闭环记录

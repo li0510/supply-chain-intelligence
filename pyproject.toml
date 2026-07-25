@@ -1,0 +1,17 @@
+[project]
+name = "supply-chain-intelligence"
+version = "0.3.0"
+description = "供应链智能分析平台 - 面向执行层的引导式数据分析工具集"
+requires-python = ">=3.11"
+dependencies = [
+    "polars>=1.40.0",
+    "openpyxl>=3.1.0",
+    "numpy==1.26.4",
+    "scipy==1.13.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-dependency>=0.6.0",
+]
