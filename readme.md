@@ -1,9 +1,6 @@
-## 文件一：供应链智能分析平台（SCI）Skill 工作流使用指南
-
-```markdown
 # 供应链智能分析平台（SCI）Skill 工作流使用指南
 
-> 版本: 0.2.5 | 最后更新: 2026-07-24 | 作者: Supply Chain Intelligence Team
+> 一套面向供应链执行层的智能数据分析工具集。
 
 ---
 
